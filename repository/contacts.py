@@ -56,7 +56,6 @@ class ContactRepository:
   ) -> List[Contact]:
     stmt = select(Contact).offset(skip).limit(limit)
 
-    # Add filters if search parameters are provided
     if first_name or last_name or email:
       filters = []
       if first_name:
